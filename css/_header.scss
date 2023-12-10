@@ -1,0 +1,103 @@
+.header{
+    &__container{
+        display: flex;
+        justify-content: space-between;
+        @include rem(padding-top, 60);
+        @include rem(padding-bottom, 20);
+    }
+    &-left{
+        @include rem(font-size, 30);
+        a{
+            text-decoration: none;
+            color: black;
+        }
+    }
+    &-right{
+        @include rem(font-size, 20);
+        a{
+            @include rem(margin-right,30);
+            color: #b4b6b7;
+            text-decoration: none;
+            
+        }
+        &-special{
+            color: white !important;
+            background-color: #5f19f5;
+            @include rem(padding, 15);
+            @include rem(border-radius, 30);
+        }
+        
+    }
+}
+.hero{
+    &-container{
+        display: flex;
+        justify-content: space-between;
+    }
+    &-left{
+        display: flex;
+        flex-direction: column;
+        @include rem(max-width, 300);
+        @include rem(margin-top, 150);
+        @include rem(gap, 40);
+        &-title{
+            @include rem(font-size, 70);
+        }
+        &-content{
+            @include rem(line-height, 30);
+            overflow-wrap: break-word;
+        }
+        &-button{
+            color: white !important;
+            background-color: #5f19f5;
+            @include rem(padding, 15);
+            @include rem(border-radius, 30);
+            @include rem(max-width, 150);
+            text-align: center;
+            @include rem(font-size, 20);
+        }
+    }
+    &-right{
+        @include rem(margin-top, 50);
+        max-width: 100%;
+        display: flex;
+        justify-content: right;
+        img{
+        max-width: 80%;
+        object-fit: cover;
+        @include rem(border-radius, 25);
+        box-shadow: 10px 10px 30px gray;
+        }
+        
+    }
+}
+.index-products{
+    &-container{
+        @include rem(margin-top, 50);
+        @include rem(margin-bottom, 50);
+        display: flex;
+        justify-content: space-evenly;
+    }
+    &-product{
+        display: flex;
+        flex-direction: column;
+        @include rem(max-width, 300);
+        box-shadow: 20px 10px 50px lightgray ;
+        &-left{
+            img{
+                width: 100%;
+                min-height: 300px;
+                object-fit: cover;
+            }
+        }
+        &-right{
+            a{
+            @include rem(font-size, 30);
+            color: black;
+            text-decoration: none;
+            @include rem(padding-left, 15);
+            }
+        }
+    }
+    
+}

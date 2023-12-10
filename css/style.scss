@@ -1,0 +1,19 @@
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Quicksand', sans-serif;
+}
+.container{
+    max-width: 70%;
+    margin-right: auto;
+    margin-left: auto;
+}
+.bold{
+    font-weight: 600;
+}
+
+@import 'functions';
+@import 'header';
+@import 'product';
+@import 'login';
