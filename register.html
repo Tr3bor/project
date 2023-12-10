@@ -1,10 +1,14 @@
-<link rel="stylesheet" href="css/style.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<script src="https://kit.fontawesome.com/546105334b.js" crossorigin="anonymous"></script>
-<script src="js/main.js"></script>
+<html>
+<head>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://kit.fontawesome.com/546105334b.js" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+    <title>Register</title>
+</head>
 <body>
     <header class="header">
         <div class="header__container container">
@@ -17,25 +21,22 @@
         </div>
     </header>
 
-    
-
-<section class="login">
-<div class="login-container container">
-    <div class="login-title bold">
-        Hello!
+    <section class="login">
+    <div class="login-container container">
+        <div class="login-title bold">
+            Hello!
+        </div>
+        <div class="login-content">
+            register an account!
+        </div>
+        <form name="registerForm" method="post" action="#" onsubmit="return validateForm()">
+            <div class="login-icont"><i class="fa-regular fa-envelope"></i><input placeholder="E-mail" class="login-input-1" type="email" name="email"></div>
+            <div class="login-icont"><i class="fa-solid fa-lock"></i><input placeholder="Password" class="login-input-2" type="password" name="password"></div>
+            <input type="submit" class="login-submit" value="REGISTER">
+            <div class="login-link">Already have an account? <a href="login.html">Login</a></div>
+        </form>
     </div>
-    <div class="login-content">
-        register an account!
-    </div>
-    <form name="registerForm" method="post" action="#" onsubmit="return validateForm()">
-        <div class="login-icont"><i class="fa-regular fa-envelope"></i><input placeholder="E-mail" class="login-input-1" type="email" name="email"></div>
-        <div class="login-icont"><i class="fa-solid fa-lock"></i><input placeholder="Password" class="login-input-2" type="password" name="password"></div>
-        <input type="submit" class="login-submit" value="REGISTER">
-        <div class="login-link">Already have an account? <a href="login.html">Login</a></div>
-    </form>
-</div>
 
-
-</section>
+    </section>
 
 </body>
