@@ -46,15 +46,13 @@
                 $stmt->bind_param("ss", $param_username, $param_password);
                 
                 $param_username = $username;
-                $param_password = password_hash($password, PASSWORD_BCRYPT); 
-                echo $param_username; echo $param_password;
+                $param_password = password_hash($password, PASSWORD_DEFAULT); 
 
                 if($stmt->execute()){
                     header("location: login.php");
                 } else{
                     echo "Oops! Something went wrong. Please try again later.2";
                 }
-    
                 $stmt->close();
             }
         }
