@@ -12,6 +12,9 @@ if(isset($_POST["submit"])){
         $fileName = basename($_FILES["file"]["name"]); 
         $targetFilePath = $targetDir . $fileName; 
         $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION); 
+        $title = $_POST['title'];
+        $description = $_POST['description'];
+        $price = $_POST['price'];
      
         // Allow certain file formats 
         $allowTypes = array('jpg','png','jpeg','gif'); 
@@ -19,7 +22,7 @@ if(isset($_POST["submit"])){
             // Upload file to server 
             if(move_uploaded_file($_FILES["file"]["tmp_name"], $targetFilePath)){ 
                 // Insert image file name into database 
-                $insert = $db->query("INSERT INTO images (file_name, uploaded_on) VALUES ('".$fileName."', NOW())"); 
+                $insert = $db->query("INSERT INTO products (file_name, uploaded_on, Title, Descript, Price) VALUES ('".$fileName."', NOW(), '".$title."', '".$description."', '".$price."')"); 
                 if($insert){ 
                     $statusMsg = "The file ".$fileName. " has been uploaded successfully."; 
                 }else{ 
