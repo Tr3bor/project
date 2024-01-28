@@ -1,3 +1,6 @@
+<?php 
+include 'dbConfig.php';
+?>
 <head>
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
