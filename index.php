@@ -20,23 +20,33 @@
 
     <div class="index-products-container container">
 
-        <div class="index-products-product">
-            <div class="index-products-product-left">
-                <a href="product1.html"><img src="https://media.ldlc.com/ld/products/00/05/44/18/LD0005441835_2_0005683367.jpg"></a>
-            </div>
-            <div class="index-products-product-right">
-                <a href="product1.html">RX 5700 xt</a>
-            </div>
-        </div>
+    <?php
+// Include the database configuration file
+include 'dbConfig.php';
 
-        <div class="index-products-product">
+// Get images from the database
+$query = $db->query("SELECT * FROM products ORDER BY uploaded_on DESC");
+
+if($query->num_rows > 0){
+    while($row = $query->fetch_assoc()){
+        $imageURL = 'uploads/'.$row["file_name"];
+        $title = $row["Title"];
+        $description = $row["Descript"];
+        $price = $row["Price"];
+?>
+    <div class="index-products-product">
             <div class="index-products-product-left">
-                <a href="product2.html"><img src="https://img.oldi.ru/upload/resaiz_images_catalog/big/98/3137028/3137028_1.jpg"></a>
+                <a href="product1.html"><img src="<?php echo $imageURL; ?>"></a>
             </div>
             <div class="index-products-product-right">
-                <a href="product2.html">RX 6800</a>
+                <a href="product1.html"><?php echo $title; ?></a>
             </div>
         </div>
+<?php }
+}else{ ?>
+    <p>No image(s) found...</p>
+<?php } ?>
+
     </div>
     </section>
 </body>
