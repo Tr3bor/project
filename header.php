@@ -1,3 +1,6 @@
+<?php 
+include 'dbConfig.php';
+?>
 <head>
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -6,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://kit.fontawesome.com/546105334b.js" crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
-    <title>Register</title>
+    <title>Superunknown</title>
 </head>
 <body>
     <header class="header">
