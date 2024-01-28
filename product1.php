@@ -10,7 +10,7 @@
         </div>
         <div class="product-right">
             <div class="product-right-title bold">ASUS RX 5700 XT</div>
-            <div class="product-right-content">skibidi toilet skibidi skibidi toilet skibidi toilet skibidi skibidi toilet skibidi toilet skibidi skibidi toiletskibidi toilet skibidi skibidi toiletskibidi toilet skibidi skibidi toiletskibidi toilet skibidi skibidi toiletsskibidi toilet skibidi skibidi toilet skibidi toilet skibidi skibidi toilet skibidi toilet skibidi skibidi toiletskibidi toilet skibidi skibidi toiletskibidi toilet skibidi skibidi toiletskibidi toilet skibidi skibidi toilets</div>
+            <div class="product-right-content">-- Insert product description here --</div>
             <div class="product-right-buttons">
                 <div class="product-right-buttons-button bold">Buy it now</div>
                 <div class="product-right-buttons-button-cart bold"><i class="fa-solid fa-cart-shopping"></i></div>
