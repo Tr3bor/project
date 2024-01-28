@@ -1,24 +1,5 @@
 <html>
-<head>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="https://kit.fontawesome.com/546105334b.js" crossorigin="anonymous"></script>
-    <title>RX 6800</title>
-</head>
-<body>
-    <header class="header">
-        <div class="header__container container">
-            <div class="header-left"><a href="index.html">SuperUnkown</a></div>
-            <div class="header-right bold">
-                <a href="about-us.html" >About us</a>
-                <a href="info.html">Info</a>
-                <a href="login.html" class="header-right-special">Get Started</a>
-            </div>
-        </div>
-    </header>
+<?php include 'header.php'; ?>
 
     <section class="product">
 
@@ -40,3 +21,4 @@
     </section>
 
 </body>
+</html>
