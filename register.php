@@ -67,7 +67,6 @@
                 $stmt->close();
             }
         }
-        
         $db->close();
     }
 ?>
@@ -84,13 +83,28 @@
             <div class="login-icont"><i class="fa-regular fa-envelope"></i><input placeholder="E-mail" class="login-input-1" type="email" name="email"></div>
             <div class="login-icont"><i class="fa-solid fa-user"></i><input placeholder="Username" class="login-input-3" type="text" name="username"></div>
             <div class="login-icont"><i class="fa-solid fa-lock"></i><input placeholder="Password" class="login-input-2" type="password" name="password"></div>
-            <label ><input type="checkbox" name="isadmin" onclick="myScript()" style="display:none;"><i id="adminicon" class="fa-solid fa-square"></i> Seller?</label>
+            <label class="login-checkbox"><input type="checkbox" name="isadmin" onclick="myScript()" style="display:none;"><i id="adminicon" class="fa-solid fa-square"></i><span> Seller?</span></label>
             <input type="submit" class="login-submit" value="REGISTER">
             <div class="login-link">Already have an account? <a href="login.php">Login</a></div>
             <?php echo $error_log; ?>
         </form>
     </div>
-
+    <!-- to put in scss -->
+    <style>
+        .login-checkbox { 
+            display:flex;
+            align-items:center;
+        }
+        .login-checkbox i { 
+            font-size: 1.875rem;
+            color: #5f19f5;
+            text-shadow: -5px 5px 5px #D0BDF0;
+            background-color: transparent;
+        }
+        .login-checkbox span {
+            padding: 0.625rem;
+        }
+    </style>
     </section>
     
 </body>
