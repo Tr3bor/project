@@ -19,7 +19,7 @@
         }
         
         if(empty($error_log) && empty($error_log)){
-            $sql = "SELECT id, username, password FROM users WHERE username = ?";
+            $sql = "SELECT id, username, password, isadmin FROM users WHERE username = ?";
             if($stmt = $db->prepare($sql)){
                 $stmt->bind_param("s", $param_username);
                 
@@ -28,7 +28,7 @@
                     $stmt->store_result();
                     
                     if($stmt->num_rows == 1){                  
-                        $stmt->bind_result($id, $username, $hashed_password);
+                        $stmt->bind_result($id, $username, $hashed_password, $isadmin);
                         if($stmt->fetch()){
                             
                             if(password_verify($password, $hashed_password)){
@@ -36,8 +36,8 @@
                                 
                                 $_SESSION["islogin"] = true;
                                 $_SESSION["id"] = $id;
-                                $_SESSION["username"] = $username;                            
-                                
+                                $_SESSION["username"] = $username;                           
+                                $_SESSION["isadmin"] = $isadmin;
                                 header("location: new-product.php");
                             } else{
                                 $login_error_log = "Invalid username or password.";
@@ -69,7 +69,7 @@
             <div class="login-icont"><i class="fa-solid fa-lock"></i><input placeholder="Password" class="login-input-2" type="password" name="password"></div>
             <input type="submit" class="login-submit" value="SIGN IN">
             <div class="login-link">Don't have an account? <a href="register.php">Create</a></div>
-            <?php //echo $error_log + var_dump($login_error_log); ?>
+            <?php //echo $_SESSION["isadmin"]; ?>
         </form>
     </div>
 

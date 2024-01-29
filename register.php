@@ -36,17 +36,28 @@
         } else{
             $password = trim($_POST["password"]);
         }
+
+        if(empty(trim($_POST["email"]))){
+            $error_log = "Please enter an email.";     
+        } else{
+            $email = trim($_POST["email"]);
+        }
         
         if(empty($error_log)){
             
-            $sql = "INSERT INTO users (username, password) VALUES (?, ?)";
-             
+            $sql = "INSERT INTO users (username, password, email, isadmin) VALUES (?, ?, ?, ?)";
+
             if($stmt = $db->prepare($sql)){
- 
-                $stmt->bind_param("ss", $param_username, $param_password);
+                $stmt->bind_param("sssi", $param_username, $param_password, $param_email, $param_admin);
                 
                 $param_username = $username;
-                $param_password = password_hash($password, PASSWORD_DEFAULT); 
+                $param_email = $email; 
+                $param_password = password_hash($password, PASSWORD_DEFAULT);
+                if($_POST["isadmin"] == true) {
+                    $param_admin = 1;
+                } else {
+                    $param_admin = 0;
+                }
 
                 if($stmt->execute()){
                     header("location: login.php");
@@ -73,6 +84,7 @@
             <div class="login-icont"><i class="fa-regular fa-envelope"></i><input placeholder="E-mail" class="login-input-1" type="email" name="email"></div>
             <div class="login-icont"><i class="fa-solid fa-user"></i><input placeholder="Username" class="login-input-3" type="text" name="username"></div>
             <div class="login-icont"><i class="fa-solid fa-lock"></i><input placeholder="Password" class="login-input-2" type="password" name="password"></div>
+            <label ><input type="checkbox" name="isadmin" onclick="myScript()" style="display:none;"><i id="adminicon" class="fa-solid fa-square"></i> Seller?</label>
             <input type="submit" class="login-submit" value="REGISTER">
             <div class="login-link">Already have an account? <a href="login.php">Login</a></div>
             <?php echo $error_log; ?>
@@ -80,6 +92,6 @@
     </div>
 
     </section>
-
+    
 </body>
 </html>

@@ -9,4 +9,7 @@ function validateForm() {
         alert("Password must be filled out.");
         return false;
     }
-} 
+}
+function myScript() {
+    $("#adminicon").toggleClass('fa-square fa-square-check');
+}
