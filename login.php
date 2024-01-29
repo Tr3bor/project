@@ -38,7 +38,7 @@
                                 $_SESSION["id"] = $id;
                                 $_SESSION["username"] = $username;                            
                                 
-                                header("location: register.php");
+                                header("location: new-product.php");
                             } else{
                                 $login_error_log = "Invalid username or password.";
                             }
@@ -65,7 +65,7 @@
             Sign in to your account!
         </div>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-            <div class="login-icont"><i class="fa-solid fa-user"></i><input placeholder="E-mail" class="login-input-1" type="text" name="username"></div>
+            <div class="login-icont"><i class="fa-solid fa-user"></i><input placeholder="Username" class="login-input-1" type="text" name="username"></div>
             <div class="login-icont"><i class="fa-solid fa-lock"></i><input placeholder="Password" class="login-input-2" type="password" name="password"></div>
             <input type="submit" class="login-submit" value="SIGN IN">
             <div class="login-link">Don't have an account? <a href="register.php">Create</a></div>
