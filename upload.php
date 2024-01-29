@@ -40,5 +40,6 @@ if(isset($_POST["submit"])){
 } 
  
 // Display status message 
-echo $statusMsg; 
+$_SESSION['status'] = $statusMsg;
+header('Location: http://real.local/project/new-product.php');
 ?>
