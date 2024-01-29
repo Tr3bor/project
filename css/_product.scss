@@ -1,20 +1,25 @@
 .product{
     &-container{
         display: flex;
-        justify-content: space-between;
+        gap: 150px;
         flex-direction: row;
+        max-height: 675px;
+        height: 100%;
         @media screen and (max-width: 1650px){
             flex-direction: column !important;
         }
     }
     &-left{
         @include rem(margin-top, 50);
-        max-width: 100%;
+        max-width: 42.1875em;
+        width: 100%;
         display: flex;
         justify-content: left;
         img{
         max-width: em(675);
+        width: 100%;
         max-height: em(675);
+        height: 100%;
         object-fit: cover;
         @include rem(border-radius, 25);
         box-shadow: 10px 10px 30px gray;

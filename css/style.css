@@ -89,32 +89,85 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   justify-items: center;
+  gap: 50px;
 }
 .index-products-product {
   display: flex;
   flex-direction: column;
-  max-width: 18.75rem;
+  max-width: 370px;
+  width: 100%;
+  background-color: white;
+  max-height: 490px;
+  height: 490px;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.05);
 }
-.index-products-product-left img {
-  width: 100%;
-  min-height: 300px;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.index-products-product-right a {
+.index-products-product a {
   font-size: 1.875rem;
   color: black;
   text-decoration: none;
-  padding-left: 0.9375rem;
+}
+.index-products-product-left {
+  width: 100%;
+}
+.index-products-product-left img {
+  width: 100%;
+  height: 209px;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+.index-products-product-right {
+  padding: 32px;
+}
+.index-products-product-right h4 {
+  margin: 0;
+  margin-bottom: 16px;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 30px;
+  letter-spacing: 0.44px;
+}
+.index-products-product-right #description {
+  max-width: 306px;
+  max-height: 84px;
+  height: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0.64px;
+  margin: 0;
+  margin-bottom: 0px;
+  word-break: break-all;
+}
+.index-products-product-right #price {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 28px;
+  letter-spacing: 0.64px;
+  margin: 0;
+  margin-bottom: 32px;
+}
+.index-products-product-right span {
+  padding: 15px 36px;
+  border: 2px solid var(--Grey-Grey-4, #e0e0e0);
+  border-radius: 50px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 0.64px;
 }
 
 .product-container {
   display: flex;
-  justify-content: space-between;
+  gap: 150px;
   flex-direction: row;
+  max-height: 675px;
+  height: 100%;
 }
 @media screen and (max-width: 1650px) {
   .product-container {
@@ -123,13 +176,16 @@ body {
 }
 .product-left {
   margin-top: 3.125rem;
-  max-width: 100%;
+  max-width: 42.1875em;
+  width: 100%;
   display: flex;
   justify-content: left;
 }
 .product-left img {
   max-width: 42.1875em;
+  width: 100%;
   max-height: 42.1875em;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 1.5625rem;

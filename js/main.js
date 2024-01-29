@@ -1,3 +1,4 @@
+
 function validateForm() {
     let email = document.forms["registerForm"]["email"].value;
     let password = document.forms["registerForm"]["password"].value;
@@ -13,3 +14,4 @@ function validateForm() {
 function myScript() {
     $("#adminicon").toggleClass('fa-square fa-square-check');
 }
+

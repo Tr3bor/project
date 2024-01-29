@@ -9,7 +9,9 @@
 <div class="addProduct">
     
 <form class="container" action="upload.php" method="post" enctype="multipart/form-data">
-<?php echo $_SESSION['status']; ?>
+<?php echo $_SESSION['status']; 
+        $_SESSION['status'] = "";
+?>
     <div class="addProduct--general">
     <h2>Title:</h2>
     <input type="text" name="title">

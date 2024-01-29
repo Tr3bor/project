@@ -21,10 +21,6 @@
     <div class="index-products-container container">
 
     <?php
-// Include the database configuration file
-include 'dbConfig.php';
-
-// Get images from the database
 $query = $db->query("SELECT * FROM products ORDER BY uploaded_on DESC");
 
 if($query->num_rows > 0){
@@ -33,14 +29,20 @@ if($query->num_rows > 0){
         $title = $row["Title"];
         $description = $row["Descript"];
         $price = $row["Price"];
+        $ID = $row["ID"]
 ?>
     <div class="index-products-product">
+    <a href="product1.php?product_ID=<?php echo $ID; ?>">
             <div class="index-products-product-left">
-                <a href="product1.html"><img src="<?php echo $imageURL; ?>"></a>
+                <img src="<?php echo $imageURL; ?>">
             </div>
             <div class="index-products-product-right">
-                <a href="product1.html"><?php echo $title; ?></a>
+                <h4><?php echo $title; ?></h4>
+                <p id="description"><?php echo $description; ?></p>
+                <p id="price"><?php echo $price . "€";?></p>
+                <span>View Product</span>
             </div>
+    </a>
         </div>
 <?php }
 }else{ ?>
