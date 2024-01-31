@@ -5,13 +5,7 @@
     <?php
     $p_id = $_GET['product_ID'];
 
-    $sql = "UPDATE products SET Views = Views + 1 WHERE ID = " . $p_id ."";
 
-if ($db->query($sql) === TRUE) {
-    echo "";
-} else {
-    echo "Error updating record: " . $conn->error;
-}
   
     
 $query = $db->query("SELECT * FROM products WHERE ID = '". $p_id ."'");
@@ -23,6 +17,16 @@ if($query->num_rows > 0){
         $description = $row["Descript"];
         $price = $row["Price"];
         $views = $row["Views"];
+
+        if($row["User"] != $_SESSION["username"]){
+        $sql = "UPDATE products SET Views = Views + 1 WHERE ID = " . $p_id ."";
+
+        if ($db->query($sql) === TRUE) {
+            echo "";
+        } else {
+            echo "Error updating record: " . $conn->error;
+        }
+    }
 ?>
 
     <div class="product-container container">
@@ -32,7 +36,7 @@ if($query->num_rows > 0){
         </div>
         <div class="product-right">
             <div class="product-right-title bold"><?php echo $title; ?></div>
-            <div class="product-right-content"><?php echo $description; ?><br> <?php echo $price . "€" ?> <br><i class="fa-regular fa-eye"></i> <?php echo $views - 1; ?></div>
+            <div class="product-right-content"><?php echo htmlspecialchars($description); ?><br> <?php echo $price . "€" ?> <br><i class="fa-regular fa-eye"></i> <?php if($views != 0){ echo $views - 1; }else{echo 0;} ?></div>
             <div class="product-right-buttons">
                 <div class="product-right-buttons-button bold">Buy it now</div>
                 <div class="product-right-buttons-button-cart bold"><i class="fa-solid fa-cart-shopping"></i></div>

@@ -349,4 +349,30 @@ body {
   box-shadow: inset 0 0 5px lightgray;
   border: none;
   height: 200px;
+}
+
+.viewProduct {
+  padding-top: 50px;
+}
+.viewProduct--box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.viewProduct--box img {
+  width: 100px;
+  height: 100px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.viewProduct--box .image {
+  display: flex;
+  gap: 20px;
+}
+.viewProduct--box .info {
+  display: flex;
+  gap: 20px;
+}
+.viewProduct--box a {
+  color: black;
 }/*# sourceMappingURL=style.css.map */

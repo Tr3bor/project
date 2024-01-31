@@ -1,6 +1,6 @@
 <?php 
 // Include the database configuration file 
-include_once 'dbConfig.php'; 
+include 'header.php'; 
  
 $statusMsg = ''; 
  
@@ -15,6 +15,7 @@ if(isset($_POST["submit"])){
         $title = $_POST['title'];
         $description = $_POST['description'];
         $price = $_POST['price'];
+        $user = $_SESSION['username'];
      
         // Allow certain file formats 
         $allowTypes = array('jpg','png','jpeg','gif'); 
@@ -22,7 +23,7 @@ if(isset($_POST["submit"])){
             // Upload file to server 
             if(move_uploaded_file($_FILES["file"]["tmp_name"], $targetFilePath)){ 
                 // Insert image file name into database 
-                $insert = $db->query("INSERT INTO products (file_name, uploaded_on, Title, Descript, Price) VALUES ('".$fileName."', NOW(), '".$title."', '".$description."', '".$price."')"); 
+                $insert = $db->query("INSERT INTO products (file_name, uploaded_on, Title, Descript, Price, User) VALUES ('".$fileName."', NOW(), '".$title."', '".$description."', '".$price."', '".$user."')"); 
                 if($insert){ 
                     $statusMsg = "The file ".$fileName. " has been uploaded successfully."; 
                 }else{ 

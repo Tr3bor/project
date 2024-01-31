@@ -46,7 +46,7 @@ if($query->num_rows > 0){
         </div>
 <?php }
 }else{ ?>
-    <p>No image(s) found...</p>
+    <p>No Products found...</p>
 <?php } ?>
 
     </div>

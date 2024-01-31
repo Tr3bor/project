@@ -1,11 +1,8 @@
 <html>
-<?php include 'header.php' ?>
-<div class="dashboard">
-    <a href="#"><i class="fa-solid fa-cube"></i>Add new product</a>
-    <a href="#"><i class="fa-solid fa-circle-info"></i>View active products</a>
-    <a href="#"><i class="fa-solid fa-trash"></i>Delete active products</a>
-    <a href="#"><i class="fa-solid fa-chart-simple"></i>View product sales</a>
-</div>
+<?php include 'header.php';
+      include 'dashboard.php';
+?>
+
 <div class="addProduct">
     
 <form class="container" action="upload.php" method="post" enctype="multipart/form-data">
