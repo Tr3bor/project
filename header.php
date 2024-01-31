@@ -20,7 +20,11 @@ include 'dbConfig.php';
             <div class="header-right bold">
                 <a href="about-us.php" >About us</a>
                 <a href="info.php">Info</a>
-                <a href="login.php" class="header-right-special">Get Started</a>
+                <?php if($_SESSION["username"]){?>
+                <a href="new-product.php" class="header-right-special">Your Products</a>
+                <?php }else{ ?>
+                <a href="login.php" class="header-right-special">Login</a>
+                <?php } ?>
             </div>
         </div>
     </header>
