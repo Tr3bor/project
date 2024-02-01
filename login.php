@@ -38,6 +38,7 @@
                                 $_SESSION["id"] = $id;
                                 $_SESSION["username"] = $username;                           
                                 $_SESSION["isadmin"] = $isadmin;
+                                $_SESSION['cart'] = [];
                                 header("location: new-product.php");
                             } else{
                                 $login_error_log = "Invalid username or password.";

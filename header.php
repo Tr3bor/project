@@ -1,5 +1,17 @@
 <?php 
 include 'dbConfig.php';
+class cartItem {
+    public $id ='';
+    public $amount = 0;
+
+    public function set_id($v) {
+        $this->id = $v;
+    }
+
+    public function increment() {
+        $this->amount = $amount + 1;
+    }
+}
 ?>
 <head>
     <link rel="stylesheet" href="css/style.css">
@@ -9,6 +21,7 @@ include 'dbConfig.php';
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://kit.fontawesome.com/546105334b.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
     
     <title>Superunknown</title>
@@ -19,7 +32,7 @@ include 'dbConfig.php';
             <div class="header-left"><a href="index.php">SuperUnkown</a></div>
             <div class="header-right bold">
                 <a href="about-us.php" >About us</a>
-                <a href="info.php">Info</a>
+                <a href="cart.php">Cart</a>
                 <?php if($_SESSION["username"]){?>
                 <a href="new-product.php" class="header-right-special">Your Products</a>
                 <?php }else{ ?>

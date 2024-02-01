@@ -27,19 +27,60 @@ if($query->num_rows > 0){
             echo "Error updating record: " . $conn->error;
         }
     }
-?>
 
+    $isincart = false;
+    $num=0;
+    for ($i=0; $i < count($_SESSION['cart']); $i++) { 
+        $item2 = $_SESSION['cart'][$i];
+        $item = unserialize($item2);
+        if($item instanceof cartItem) {
+            if($item->id == $_GET['product_ID']) {
+                $isincart = true;
+                $num = $item->amount;
+            }
+        }
+    }
+?>
+<?php 
+
+?>
     <div class="product-container container">
         <div class="product-left">
             <img src="<?php echo $imageURL; ?>">
-            
+            <!-- i shtoj ne scss-->
+            <style>
+                #lblCartCount {
+                    font-size: 12px;
+                    background: #5f19f5;
+                    color: #fff;
+                    padding: 0 5px;
+                    vertical-align: top;
+                    margin-left: -10px;
+                }
+                .badge {
+                    padding-left: 9px;
+                    padding-right: 9px;
+                    -webkit-border-radius: 9px;
+                    -moz-border-radius: 9px;
+                    border-radius: 9px;
+                }
+            </style>
         </div>
         <div class="product-right">
             <div class="product-right-title bold"><?php echo $title; ?></div>
             <div class="product-right-content"><?php echo htmlspecialchars($description); ?><br> <?php echo $price . "€" ?> <br><i class="fa-regular fa-eye"></i> <?php if($views != 0){ echo $views - 1; }else{echo 0;} ?></div>
             <div class="product-right-buttons">
                 <div class="product-right-buttons-button bold">Buy it now</div>
-                <div class="product-right-buttons-button-cart bold"><i class="fa-solid fa-cart-shopping"></i></div>
+                <div class="product-right-buttons-button-cart bold" 
+                    hx-post="add-cart.php?cart=<?php echo $_GET['product_ID'];?>"
+                    hx-trigger="click"
+                    hx-target="this"
+                    hx-swap="outerHTML">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <?php if($isincart):?>
+                    <span class="badge badge-warning" id="lblCartCount"> <?php echo $num; ?> </span>
+                    <?php endif;?>
+                </div>
             </div> 
         </div>
     </div>
