@@ -39,7 +39,7 @@
                                 $_SESSION["username"] = $username;                           
                                 $_SESSION["isadmin"] = $isadmin;
                                 $_SESSION['cart'] = [];
-                                header("location: new-product.php");
+                                header("location: new-product");
                             } else{
                                 $login_error_log = "Invalid username or password.";
                             }
@@ -69,7 +69,7 @@
             <div class="login-icont"><i class="fa-solid fa-user"></i><input placeholder="Username" class="login-input-1" type="text" name="username"></div>
             <div class="login-icont"><i class="fa-solid fa-lock"></i><input placeholder="Password" class="login-input-2" type="password" name="password"></div>
             <input type="submit" class="login-submit" value="SIGN IN">
-            <div class="login-link">Don't have an account? <a href="register.php">Create</a></div>
+            <div class="login-link">Don't have an account? <a href="register">Create</a></div>
             <?php //echo $_SESSION["isadmin"]; ?>
         </form>
     </div>

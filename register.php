@@ -60,7 +60,7 @@
                 }
 
                 if($stmt->execute()){
-                    header("location: login.php");
+                    header("location: login");
                 } else{
                     echo "Oops! Something went wrong. Please try again later.2";
                 }
@@ -85,7 +85,7 @@
             <div class="login-icont"><i class="fa-solid fa-lock"></i><input placeholder="Password" class="login-input-2" type="password" name="password"></div>
             <label class="login-checkbox"><input type="checkbox" name="isadmin" onclick="myScript()" style="display:none;"><i id="adminicon" class="fa-solid fa-square"></i><span> Seller?</span></label>
             <input type="submit" class="login-submit" value="REGISTER">
-            <div class="login-link">Already have an account? <a href="login.php">Login</a></div>
+            <div class="login-link">Already have an account? <a href="login">Login</a></div>
             <?php echo $error_log; ?>
         </form>
     </div>

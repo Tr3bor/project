@@ -5,7 +5,7 @@
 
 <div class="addProduct">
     
-<form class="container" action="upload.php" method="post" enctype="multipart/form-data">
+<form class="container" action="upload" method="post" enctype="multipart/form-data">
 <?php echo $_SESSION['status']; 
         $_SESSION['status'] = "";
 ?>

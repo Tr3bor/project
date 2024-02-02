@@ -72,7 +72,7 @@ if($query->num_rows > 0){
             <div class="product-right-buttons">
                 <div class="product-right-buttons-button bold">Buy it now</div>
                 <div class="product-right-buttons-button-cart bold" 
-                    hx-post="add-cart.php?cart=<?php echo $_GET['product_ID'];?>"
+                    hx-post="add-cart?cart=<?php echo $_GET['product_ID'];?>"
                     hx-trigger="click"
                     hx-target="this"
                     hx-swap="outerHTML">

@@ -40,7 +40,7 @@ class cartItem {
     }
 ?>
 <?php 
-echo '<div class="product-right-buttons-button-cart bold" hx-post="add-cart.php?cart='.$_GET['cart'].'"
+echo '<div class="product-right-buttons-button-cart bold" hx-post="add-cart?cart='.$_GET['cart'].'"
            hx-trigger="click"
            hx-target="this"
            hx-swap="outerHTML"><i class="fa-solid fa-cart-shopping"></i> <span class="badge badge-warning" id="lblCartCount">'.$numValue.'</span></div>';

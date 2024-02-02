@@ -26,12 +26,12 @@ if($query->num_rows > 0){
    <div class="viewProduct--box">
         <div class="image">
             <img src="<?php echo $imageURL; ?>">
-            <h2><a href="product1.php?product_ID=<?php echo $ID; ?>"><?php echo $title; ?></a></h2>
+            <h2><a href="product1?product_ID=<?php echo $ID; ?>"><?php echo $title; ?></a></h2>
         </div>
         <div class="info">
             <h2><?php echo $price*$item->amount. "€" ?></h2>  
             <h2><i class="fa-regular"></i>#: <?php echo $item->amount; ?></h2>
-            <h2 hx-post="remove-cart.php?cart=<?php echo $ID;?>"
+            <h2 hx-post="remove-cart?cart=<?php echo $ID;?>"
                     hx-trigger="click"
                     hx-target="#containerid<?php echo $ID;?>"
                     hx-swap="outerHTML"><a href="#"

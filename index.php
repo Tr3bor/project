@@ -32,7 +32,7 @@ if($query->num_rows > 0){
         $ID = $row["ID"]
 ?>
     <div class="index-products-product">
-    <a href="product1.php?product_ID=<?php echo $ID; ?>">
+    <a href="product1?product_ID=<?php echo $ID; ?>">
             <div class="index-products-product-left">
                 <img src="<?php echo $imageURL; ?>">
             </div>

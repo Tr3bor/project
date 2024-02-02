@@ -29,14 +29,14 @@ class cartItem {
 <body>
     <header class="header">
         <div class="header__container container">
-            <div class="header-left"><a href="index.php">SuperUnkown</a></div>
+            <div class="header-left"><a href="index">SuperUnkown</a></div>
             <div class="header-right bold">
-                <a href="about-us.php" >About us</a>
-                <a href="cart.php">Cart</a>
+                <a href="about-us" >About us</a>
+                <a href="cart">Cart</a>
                 <?php if($_SESSION["username"]){?>
-                <a href="new-product.php" class="header-right-special">Your Products</a>
+                <a href="new-product" class="header-right-special">Your Products</a>
                 <?php }else{ ?>
-                <a href="login.php" class="header-right-special">Login</a>
+                <a href="login" class="header-right-special">Login</a>
                 <?php } ?>
             </div>
         </div>

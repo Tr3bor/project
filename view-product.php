@@ -20,12 +20,12 @@ if($query->num_rows > 0){
    <div class="viewProduct--box">
         <div class="image">
             <img src="<?php echo $imageURL; ?>">
-            <h2><a href="product1.php?product_ID=<?php echo $ID; ?>"><?php echo $title; ?></a></h2>
+            <h2><a href="product1?product_ID=<?php echo $ID; ?>"><?php echo $title; ?></a></h2>
         </div>
         <div class="info">
             <h2><?php echo $price . "€" ?></h2>  
             <h2><i class="fa-regular fa-eye"></i> <?php echo $views; ?></h2>
-            <h2><a href="delete-product.php?product_ID=<?php echo $ID; ?>"><i class="fa-solid fa-trash"></i></a>  </h2>
+            <h2><a href="delete-product?product_ID=<?php echo $ID; ?>"><i class="fa-solid fa-trash"></i></a>  </h2>
         </div>
    </div>
         <hr>
