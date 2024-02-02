@@ -23,13 +23,20 @@ class cartItem {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
-    
+    <script src="js/header.js"></script>
     <title>Superunknown</title>
 </head>
 <body>
     <header class="header">
         <div class="header__container container">
             <div class="header-left"><a href="index">SuperUnkown</a></div>
+            
+            <div id="nav-icon1">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
             <div class="header-right bold">
                 <a href="about-us" >About us</a>
                 <a href="cart">Cart</a>
@@ -41,3 +48,15 @@ class cartItem {
             </div>
         </div>
     </header>
+
+    <div class="header-m">
+    <div class="header bold">
+                <a href="about-us" >About us</a>
+                <a href="cart">Cart</a>
+                <?php if($_SESSION["username"]){?>
+                <a href="new-product" class="header-right-special">Your Products</a>
+                <?php }else{ ?>
+                <a href="login" class="header-right-special">Login</a>
+                <?php } ?>
+            </div>
+    </div>

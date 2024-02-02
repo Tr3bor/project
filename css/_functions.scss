@@ -1,3 +1,13 @@
+
+$xs: 0;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 992px;
+$xxl: 1025px;
+
+
+
 /// Converts px to rem:
 /// the provided value is divided by 16.
 /// (by default, 1rem equals to 16px).
@@ -16,20 +26,74 @@
 }
 
 
-@mixin devices ($breakpoint) { //the name of the mixin is devices
-  
-    @if $breakpoint == tablet {    
-    @media only screen and (max-width: 680px) {
-      @content;
-    }
-  }
- 
-  @if $breakpoint == mobile {
-    @media only screen and (max-width: 481px) {
-      @content;
-    }
+@mixin mobile-extrasmall {
+  @media only screen and (max-width: $esm) {
+    @content;
   }
 }
+
+@mixin mobile-small {
+  @media only screen and (max-width: $sm) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media only screen and (max-width: $md) {
+    @content;
+  }
+}
+
+/// Media Query mixin for small tablets
+@mixin tablet-minus {
+  @media only screen and (max-width: $lg) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media only screen and (min-width: $md) and (max-width: $lg) {
+    @content;
+  }
+}
+
+@mixin tablet-big {
+  @media only screen and (min-width: $lg) and (max-width: $xl) {
+    @content;
+  }
+}
+
+@mixin tablets {
+  @media only screen and (min-width: $md) and (max-width: $xl) {
+    @content;
+  }
+}
+
+@mixin desktop-minus {
+  @media only screen and (max-width: $xl) {
+    @content;
+  }
+}
+
+/// Media Query mixin for desktop devices
+@mixin desktop {
+  @media only screen and (min-width: $xl) and (max-width: $xxl) {
+    @content;
+  }
+}
+
+@mixin desktop-plus {
+  @media only screen and (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin bigScreen {
+  @media only screen and (min-width: $xxl) {
+    @content;
+  }
+}
+
 
 $browser-context: 16;
 

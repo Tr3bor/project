@@ -17,6 +17,7 @@
     </section>
 
     <section class="index-products">
+    <h2 class="index-products-h2">Latest Products</h2>
 
     <div class="index-products-container container">
 

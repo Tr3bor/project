@@ -16,6 +16,7 @@ if($query->num_rows > 0){
         $price = $row["Price"];
         $ID = $row["ID"];
         $views = $row["Views"];
+        $sales = $row["Sales"];
 ?>
    <div class="viewProduct--box">
         <div class="image">
@@ -25,7 +26,8 @@ if($query->num_rows > 0){
         <div class="info">
             <h2><?php echo $price . "€" ?></h2>  
             <h2><i class="fa-regular fa-eye"></i> <?php echo $views; ?></h2>
-            <h2><a href="delete-product?product_ID=<?php echo $ID; ?>"><i class="fa-solid fa-trash"></i></a>  </h2>
+            <h2><i class="fa-solid fa-chart-simple"> </i><?php echo " " . $sales; ?></h2>
+            <h2><a href="delete-product?product_ID=<?php echo $ID; ?>"><i class="fa-solid fa-trash"></i></a> </h2>
         </div>
    </div>
         <hr>

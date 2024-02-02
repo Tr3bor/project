@@ -5,6 +5,9 @@
         flex-direction: row;
         max-height: 675px;
         height: 100%;
+        @include mobile{
+            gap: 0;
+        }
         @media screen and (max-width: 1650px){
             flex-direction: column !important;
         }
@@ -31,6 +34,9 @@
         @include rem(max-width, 500);
         @include rem(margin-top, 150);
         @include rem(gap, 40);
+        @include mobile{
+            margin-top: 50px;
+        }
         &-title{
             @include rem(font-size, 70);
         }
