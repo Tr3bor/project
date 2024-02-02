@@ -45,13 +45,15 @@
         
         if(empty($error_log)){
             
-            $sql = "INSERT INTO users (username, password, email, isadmin) VALUES (?, ?, ?, ?)";
+            $sql = "INSERT INTO users (username, password, email, location, phone_number, isadmin) VALUES (?, ?, ?, ?, ?, ?)";
 
             if($stmt = $db->prepare($sql)){
-                $stmt->bind_param("sssi", $param_username, $param_password, $param_email, $param_admin);
+                $stmt->bind_param("sssssi", $param_username, $param_password, $param_email, $param_location, $param_phone_number, $param_admin);
                 
                 $param_username = $username;
                 $param_email = $email; 
+                $param_location = $_POST["location"];
+                $param_phone_number = $_POST["phone_number"];
                 $param_password = password_hash($password, PASSWORD_DEFAULT);
                 if($_POST["isadmin"] == true) {
                     $param_admin = 1;
@@ -82,6 +84,8 @@
         <form name="registerForm" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" onsubmit="return validateForm()">
             <div class="login-icont"><i class="fa-regular fa-envelope"></i><input placeholder="E-mail" class="login-input-1" type="email" name="email"></div>
             <div class="login-icont"><i class="fa-solid fa-user"></i><input placeholder="Username" class="login-input-3" type="text" name="username"></div>
+            <div class="login-icont"><i class="fa-solid fa-location-dot"></i><input placeholder="Location" class="login-input-3" type="text" name="location"></div>
+            <div class="login-icont"><i class="fa-solid fa-phone"></i><input placeholder="Phone Number" class="login-input-3" type="text" name="phone_number"></div>
             <div class="login-icont"><i class="fa-solid fa-lock"></i><input placeholder="Password" class="login-input-2" type="password" name="password"></div>
             <label class="login-checkbox"><input type="checkbox" name="isadmin" onclick="myScript()" style="display:none;"><i id="adminicon" class="fa-solid fa-square"></i><span> Seller?</span></label>
             <input type="submit" class="login-submit" value="REGISTER">
