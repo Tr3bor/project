@@ -6,6 +6,7 @@
 <div class="viewProduct container">
 <h2>Cart:</h2>
 <?php
+$sum = 0;
 if(!empty($_SESSION['cart'])) {
 for ($i=0; $i < count($_SESSION['cart']); $i++) { 
     $item2 = $_SESSION['cart'][$i];
@@ -29,7 +30,7 @@ if($query->num_rows > 0){
             <h2><a href="product1?product_ID=<?php echo $ID; ?>"><?php echo $title; ?></a></h2>
         </div>
         <div class="info">
-            <h2><?php echo $price*$item->amount. "€" ?></h2>  
+            <h2><?php $sum+=$price*$item->amount; echo $price*$item->amount. "€" ?></h2>  
             <h2><i class="fa-regular"></i>#: <?php echo $item->amount; ?></h2>
             <h2 hx-post="remove-cart?cart=<?php echo $ID;?>"
                     hx-trigger="click"
@@ -49,9 +50,22 @@ if($query->num_rows > 0){
     echo '<p>Your cart is empty...</p>';
 }
 ?>
-
+    <div class="checkout-div">
+        <div class="checkout-div-container">
+            <p style="padding:0.9375rem;">Total: <span style="font-weight: 700;"><?php echo $sum; ?>€</span></p>
+            <a href="checkout" class="header-right-special">Checkout</a>
+        </div>
+    </div>
 </div>
 
-
+<style>
+    .checkout-div {
+        display:flex;
+        justify-content: end;
+    }
+    .checkout-div a {
+        text-decoration: none;
+    }
+</style>
 </body>
 </html>

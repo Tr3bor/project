@@ -70,7 +70,9 @@ if($query->num_rows > 0){
             <div class="product-right-title bold"><?php echo $title; ?></div>
             <div class="product-right-content"><?php echo htmlspecialchars($description); ?><br> <?php echo $price . "€" ?> <br><i class="fa-regular fa-eye"></i> <?php if($views != 0){ echo $views - 1; }else{echo 0;} ?></div>
             <div class="product-right-buttons">
-                <div class="product-right-buttons-button bold">Buy it now</div>
+                <a href="checkout?id=<?php echo $_GET['product_ID']?>" style="text-decoration:none;">
+                    <div class="product-right-buttons-button bold">Buy it now</div>
+                </a>
                 <div class="product-right-buttons-button-cart bold" 
                     hx-post="add-cart?cart=<?php echo $_GET['product_ID'];?>"
                     hx-trigger="click"
