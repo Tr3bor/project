@@ -18,6 +18,9 @@ if($query->num_rows > 0){
         $price = $row["Price"];
         $views = $row["Views"];
 
+        $query2 = $db->query("SELECT * FROM users WHERE username = '".$row["User"]."'");
+        if($query2->num_rows > 0){while($row2 = $query2->fetch_assoc()){ $loc = $row2['location']; $poh = $row2['phone_number']; } }
+
         if($row["User"] != $_SESSION["username"]){
         $sql = "UPDATE products SET Views = Views + 1 WHERE ID = " . $p_id ."";
 
@@ -66,8 +69,9 @@ if($query->num_rows > 0){
                 }
             </style>
         </div>
-        <div class="product-right">
+        <div class="product-right">         
             <div class="product-right-title bold"><?php echo $title; ?></div>
+            <div class="product-right-content">Location:  <?php echo $loc; ?> <br>Phone Number: <?php echo $poh;?></div>
             <div class="product-right-content"><?php echo htmlspecialchars($description); ?><br> <?php echo $price . "€" ?> <br><i class="fa-regular fa-eye"></i> <?php if($views != 0){ echo $views - 1; }else{echo 0;} ?></div>
             <div class="product-right-buttons">
                 <a href="checkout?id=<?php echo $_GET['product_ID']?>" style="text-decoration:none;">
