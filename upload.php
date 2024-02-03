@@ -25,7 +25,7 @@ if(isset($_POST["submit"])){
                 // Insert image file name into database 
                 $insert = $db->query("INSERT INTO products (file_name, uploaded_on, Title, Descript, Price, User) VALUES ('".$fileName."', NOW(), '".$title."', '".$description."', '".$price."', '".$user."')"); 
                 if($insert){ 
-                    $statusMsg = "The file ".$fileName. " has been uploaded successfully."; 
+                    $statusMsg = "Your product ".$title. " has been uploaded successfully."; 
                 }else{ 
                     $statusMsg = "File upload failed, please try again."; 
                 }  
