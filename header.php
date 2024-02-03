@@ -40,8 +40,9 @@ class cartItem {
             <div class="header-right bold">
                 <a href="about-us" >About us</a>
                 <a href="cart">Cart</a>
-                <?php if($_SESSION["username"]){?>
+                <?php if($_SESSION["username"]){ ?>
                 <a href="new-product" class="header-right-special">Your Products</a>
+                <a href="logout">Log Out</a>
                 <?php }else{ ?>
                 <a href="login" class="header-right-special">Login</a>
                 <?php } ?>
@@ -55,6 +56,7 @@ class cartItem {
                 <a href="cart">Cart</a>
                 <?php if($_SESSION["username"]){?>
                 <a href="new-product" class="header-right-special">Your Products</a>
+                <a href="logout">Log Out</a>
                 <?php }else{ ?>
                 <a href="login" class="header-right-special">Login</a>
                 <?php } ?>

@@ -481,6 +481,10 @@ body {
   text-align: center;
   font-size: 1.25rem;
 }
+.hero-left-button a {
+  color: white;
+  text-decoration: none;
+}
 .hero-right {
   margin-top: 3.125rem;
   max-width: 100%;

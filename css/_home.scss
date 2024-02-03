@@ -36,6 +36,10 @@
         @include rem(max-width, 150);
         text-align: center;
         @include rem(font-size, 20);
+        a{
+          color: white;
+          text-decoration: none;
+        }
       }
     }
     &-right {
