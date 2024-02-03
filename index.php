@@ -6,8 +6,8 @@
     <div class="hero-container container">
         <div class="hero-left">
             <div class="hero-left-title bold">Online Shopping</div>
-            <div class="hero-left-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum quis maiores praesentium. Libero, debitis?</div>
-            <div class="hero-left-button bold">Button name</div>
+            <div class="hero-left-content">We've made a successful company out of a online marketplace!</div>
+            <div class="hero-left-button bold">Learn More</div>
         </div>
         <div class="hero-right">
             <img src="https://cdn.dribbble.com/users/4626561/screenshots/12233454/media/ac27f201d558b0cbe41513f97146a80e.png">
