@@ -41,7 +41,9 @@ class cartItem {
                 <a href="about-us" >About us</a>
                 <a href="cart">Cart</a>
                 <?php if($_SESSION["username"]){ ?>
+                    <?php if($_SESSION['isadmin']){?>
                 <a href="new-product" class="header-right-special">Your Products</a>
+                <?php } ?>
                 <a href="logout">Log Out</a>
                 <?php }else{ ?>
                 <a href="login" class="header-right-special">Login</a>

@@ -1,4 +1,4 @@
-<?php if(!$_SESSION['username']){
+<?php if(!$_SESSION['username'] || !$_SESSION['isadmin']){
     header('Location: index');
 }
 ?>
